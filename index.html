@@ -10,38 +10,52 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <style>
     body {
-      background: #f6f4ef;
-      color: #1d293b;
+      background: #f0e8dd;
+      color: #121212;
     }
     .navbar {
-      background: #ffffff;
-      box-shadow: 0 2px 18px rgba(15, 23, 42, 0.08);
+      background: #faf1e7;
+      box-shadow: 0 2px 18px rgba(0, 0, 0, 0.08);
     }
     .navbar-brand,
     .nav-link {
-      color: #1d293b !important;
+      color: #121212 !important;
       font-weight: 500;
     }
     .nav-link:hover,
     .nav-link:focus {
-      color: #c49f29 !important;
+      color: #b38b42 !important;
     }
     .navbar-toggler {
-      border-color: rgba(15, 23, 42, 0.15);
+      border-color: rgba(0, 0, 0, 0.15);
     }
     .navbar-toggler-icon {
       filter: none;
     }
     .banner {
+      position: relative;
       min-height: 90vh;
-      background: linear-gradient(rgba(10, 31, 68, 0.7), rgba(10, 31, 68, 0.7)),
-                  url('banner.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(240, 232, 220, 0.5), rgba(240, 232, 220, 0.5));
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       color: #ffffff;
       text-align: center;
+      overflow: hidden;
+    }
+    .banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('Imagem.jpeg') center 40% / cover no-repeat;
+      filter: blur(4px) brightness(0.55);
+      transform: scale(1.05);
+      z-index: 0;
+    }
+    .banner > * {
+      position: relative;
+      z-index: 1;
     }
     .banner h1 {
       font-size: 2.8rem;
@@ -55,8 +69,8 @@
       color: rgba(255, 255, 255, 0.88);
     }
     .banner .btn {
-      background: #c49f29;
-      color: #0a1f44;
+      background: #b19052;
+      color: #000000;
       font-weight: 600;
       border: none;
       padding: 0.95rem 2rem;
@@ -68,20 +82,20 @@
       color: #ffffff;
     }
     .navbar .btn-nav {
-      background: #c49f29;
-      color: #0a1f44;
+      background: #b19052;
+      color: #000000;
       font-weight: 600;
       border: none;
       padding: 0.55rem 1.25rem;
     }
     section {
-      color: #1e293b;
+      color: #000000;
     }
     section h2,
     section h5,
     section h1,
     section h3 {
-      color: #0a1f44;
+      color: #000000;
     }
     section#sobre,
     section#blog {
@@ -89,14 +103,14 @@
     }
     section#areas,
     section#contato {
-      background: #f8f6f1;
+      background: #f8ece0;
     }
     .form-control,
     .form-select,
     textarea.form-control {
-      background: #ffffff;
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      color: #1d293b;
+      background: #fff8f2;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      color: #000000;
     }
     .form-control:focus,
     .form-select:focus,
@@ -105,28 +119,28 @@
       border-color: #c49f29;
       box-shadow: 0 0 0 0.2rem rgba(196, 159, 41, 0.2);
       background: #ffffff;
-      color: #0a1f44;
+      color: #000000;
     }
     .form-control::placeholder,
     textarea.form-control::placeholder {
       color: rgba(26, 32, 44, 0.45);
     }
     .btn-dark {
-      background: #1d2937;
+      background: #000000;
       border: none;
       color: #ffffff;
     }
     .btn-dark:hover {
-      background: #152038;
+      background: #000000;
     }
     .card {
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      background: #ffffff;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #fff8f1;
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
     }
     .card i {
       font-size: 2rem;
@@ -134,8 +148,8 @@
       color: #c49f29;
     }
     footer {
-      background: #0a1f44;
-      color: #ffffff;
+      background: #1d1b18;
+      color: #f7ede1;
       padding: 2rem 0;
       text-align: center;
     }
@@ -143,9 +157,11 @@
 </head>
 <body>
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Advocacia & Ética</a>
+      <a class="navbar-brand" href="#">
+        <img src="logo.svg" alt="Isensee & Ferretti" style="height:48px; max-width:180px;" />
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
